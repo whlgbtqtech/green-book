@@ -1,0 +1,6 @@
+# Dependencies
+node_modules
+Public/bower_components
+
+# Webstorm config file
+.idea/
