@@ -1,7 +1,6 @@
 ### Before running
 
-*`npm install` from root
-*`bower install` from Public 
+`npm install` `bower install`
 
 ### Running 
 
