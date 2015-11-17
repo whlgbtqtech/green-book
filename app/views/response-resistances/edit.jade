@@ -1,0 +1,19 @@
+
+//- # response resistance - edit
+
+extends ../layout
+
+block content
+
+  .container
+    .row
+      .col-md-4.col-md-offset-4
+        h1 Edit Response resistance - #{responseResistance.name}
+
+        form(action='/response-resistances/' + responseResistance.id + '?_method=PUT', method='POST')
+          input(type='hidden', name='_csrf', value=csrf)
+          .form-group
+            label.control-label Name
+            input(type='text', name='name', placeholder='Name', value=responseResistance.name, required).form-control
+
+          button(type='submit').btn.btn-lg.btn-primary.btn-block Update Response resistance

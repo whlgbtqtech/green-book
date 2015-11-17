@@ -1,0 +1,19 @@
+
+//- # assaults on officer - edit
+
+extends ../layout
+
+block content
+
+  .container
+    .row
+      .col-md-4.col-md-offset-4
+        h1 Edit Assaults on officer - #{assaultsOnOfficer.name}
+
+        form(action='/assaults-on-officers/' + assaultsOnOfficer.id + '?_method=PUT', method='POST')
+          input(type='hidden', name='_csrf', value=csrf)
+          .form-group
+            label.control-label Name
+            input(type='text', name='name', placeholder='Name', value=assaultsOnOfficer.name, required).form-control
+
+          button(type='submit').btn.btn-lg.btn-primary.btn-block Update Assaults on officer

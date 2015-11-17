@@ -1,0 +1,33 @@
+
+//- # stop - index
+
+extends ../layout
+
+block content
+
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1 Stops (#{stops.length})
+        p: a(href='/stops/new') Create New Stop
+        table.table.table-bordered.table-hover.table-striped
+          thead
+            th Name
+            th Created At
+            th Updated At
+            th Actions
+          tbody
+            each stop in stops
+              tr
+                td= stop.name
+                td= moment(stop.created_at).format('MM/DD/YY')
+                td= moment(stop.updated_at).format('MM/DD/YY')
+                td
+                  ul.list-inline
+                    li: a(href='/stops/' + stop.id).btn.btn-sm.btn-info View
+                    li: a(href='/stops/' + stop.id + '/edit').btn.btn-sm.btn-warning Edit
+                    li
+                      form(action='/stops/' + stop.id + '?_method=DELETE', method='POST').form-inline
+                        input(type='hidden', name='_csrf', value=csrf)
+                        button(type='submit').btn.btn-sm.btn-danger Remove
+        include ../_paginate

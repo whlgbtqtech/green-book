@@ -1,0 +1,33 @@
+
+//- # use of force - index
+
+extends ../layout
+
+block content
+
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1 Use of forces (#{useOfForces.length})
+        p: a(href='/use-of-forces/new') Create New Use of force
+        table.table.table-bordered.table-hover.table-striped
+          thead
+            th Name
+            th Created At
+            th Updated At
+            th Actions
+          tbody
+            each useOfForce in useOfForces
+              tr
+                td= useOfForce.name
+                td= moment(useOfForce.created_at).format('MM/DD/YY')
+                td= moment(useOfForce.updated_at).format('MM/DD/YY')
+                td
+                  ul.list-inline
+                    li: a(href='/use-of-forces/' + useOfForce.id).btn.btn-sm.btn-info View
+                    li: a(href='/use-of-forces/' + useOfForce.id + '/edit').btn.btn-sm.btn-warning Edit
+                    li
+                      form(action='/use-of-forces/' + useOfForce.id + '?_method=DELETE', method='POST').form-inline
+                        input(type='hidden', name='_csrf', value=csrf)
+                        button(type='submit').btn.btn-sm.btn-danger Remove
+        include ../_paginate
