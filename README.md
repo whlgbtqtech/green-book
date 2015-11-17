@@ -1,18 +1,6 @@
 
 # Green-Book
 
-> The author of [Eskimo](http://eskimo.io) highly recommends
-reading [ZAG](http://goo.gl/DPmCWa) and adding an onliness statement here.
-After completed, you can delete this blockquote from the Markdown file.
-
-> "What's the one thing that makes your brand both different and compelling?
-What makes you the 'only'?  Complete a simple onliness statement.
-Add detail by answering what, how, who, where, when, and why."
-&ndash; Marty Neumeier
-
-> (e.g. "Eskimo is the only boilerplate for Node.js developers who want
-a proven, quick, and easy way to build rapid MVPs in 0-60 days.")
-
 **TODO**: Green-Book is the only &hellip; that &hellip;
 
 

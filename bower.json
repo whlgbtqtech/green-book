@@ -1,6 +1,11 @@
 {
+  "homepage": "https://github.com/whlgbtqtech/green-book",
+  "authors": [
+      "Kate Jefferson <barbedbella@gmail.com>",
+      "Courtney Wilburn <courtney@cjwilburn.com>"
+    ],
   "name": "green-book",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "ignore": [
     "**/.*",
@@ -15,6 +20,8 @@
     "jquery": "~2.1.1",
     "modernizr": "~2.8.3",
     "bootbox": "~4.3.0",
-    "jade": "~1.8.0"
+    "jade": "~1.8.0",
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7"
   }
 }
