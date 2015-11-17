@@ -1,0 +1,53 @@
+
+//- # layout
+
+doctype
+html.no-js
+  head
+    title= typeof title === 'string' ? 'Eskimo - ' + title : 'Eskimo - Rapid MVP'
+    block meta
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+      meta(name='description', content='This rapid MVP was built with Eskimo.')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      meta(name='_csrf', value=csrf)
+      if settings.server.env !== 'production'
+        meta(name='robots' content='noindex')
+        meta(name='googlebot' content='noindex')
+
+    //- build:css /css/app.css
+    block stylesheets
+      link(rel='stylesheet', href='/css/style.css')
+    //- endbuild
+
+    //- build:js /js/modernizr.js
+    script(src='/bower/modernizr/modernizr.js')
+    //- endbuild
+
+  body
+    //- Browse Happy
+    //- <http://browsehappy.com/>
+    != "<!--[if lt IE 8]>"
+    p.browsehappy
+      = 'You are using an '
+      strong outdated
+      = ' browser. Please '
+      a(href="http://browsehappy.com/") upgrade your browser
+      = ' to improve your experience.'
+    != "<!--<![endif]-->"
+    block messages
+      include _messages.jade
+    block content
+    //- build:js /js/app.js
+    block scripts
+      script(src='/bower/jquery/dist/jquery.js')
+      script(src='/bower/bootstrap/dist/js/bootstrap.js')
+      script(src='/bower/bootbox/bootbox.js')
+      script(src='/bower/jade/runtime.js')
+      //- test example of client-side jade templates
+      script(src='/js/templates/views/client-side-test.js')
+      script(src='/js/plugins.js')
+      script(src='/js/main.js')
+      if settings.facebook.enabled
+        script(src='/js/fb-appended-hash-bug-fix.js')
+    //- endbuild
