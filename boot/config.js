@@ -6,6 +6,7 @@ var autoprefixer = require('autoprefixer-core');
 
 var parentDir = path.join(__dirname, '..');
 var appDir = path.join(parentDir, 'app');
+var angularDir = path.join(parentDir, 'public');
 
 var pkg = require(path.join(parentDir, 'package'));
 
@@ -49,8 +50,8 @@ exports = module.exports = function() {
       distDir: distDir,
       publicDir: publicDir,
       views: {
-        dir: viewsDir,
-        engine: 'jade'
+        dir: angularDir,
+        engine: 'angular'
       },
       password: {
         minStrength: 0,
@@ -194,7 +195,7 @@ exports = module.exports = function() {
 
     development: {
       cache: true,
-      url: 'http://green-book-dev.eskimo.io',
+      url: 'http://green-book-dev.herokuapp.com',
       server: {
         env: 'development',
         port: 3000,
@@ -219,7 +220,7 @@ exports = module.exports = function() {
 
     staging: {
       cache: true,
-      url: 'http://green-book-stag.eskimo.io',
+      url: 'http://green-book-staging.herokuapp.com',
       password: {
         minStrength: 1,
         limitAttempts: true
@@ -274,7 +275,7 @@ exports = module.exports = function() {
 
     production: {
       cache: true,
-      url: 'http://green-book-prod.eskimo.io',
+      url: 'http://green-book.herokuapp.com',
       password: {
         minStrength: 1,
         limitAttempts: true
