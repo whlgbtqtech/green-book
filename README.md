@@ -1,7 +1,7 @@
 
 # Green-Book
 
-**TODO**: Green-Book is the only application that will allow users to look at data and give an opportunity for community members to provide discuss interactions with law enforcement.
+Using information from the [Public Safety Data Portal](https://publicsafetydataportal.org) to visualize law enforcement-community interactions and allow community members to have a voice.
 
 
 ## Install

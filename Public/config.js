@@ -12,11 +12,11 @@
     function configGB($routeProvider) {
 
         $routeProvider.when('/', {
-            templateUrl: 'home/home.html',
+            templateUrl: 'views/home.html',
             controller: 'HomeController',
             controllerAs: 'HomeCtrl'
         }).when('/how-to', {
-            templateUrl: 'how-to/how-to.html',
+            templateUrl: 'views/how-to.html',
             controller: 'HowController',
             controllerAs: 'HowCtrl'
         })
@@ -24,4 +24,3 @@
     }
 
 })();
-

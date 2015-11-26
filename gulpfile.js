@@ -123,11 +123,10 @@ gulp.task('clean', function() {
 });
 
 gulp.task('imagemin', function () {
+ var revall = new revall({ prefix: 'http://cdn.cloudfront.net/'});
   return gulp
     .src('./assets/public/img/**/*')
-    .pipe(revall({
-      //prefix: 'http://cdn.cloudfront.net/'
-    }))
+    .pipe(revall.revision())
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [ { removeViewBox: false } ],
