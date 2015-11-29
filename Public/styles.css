@@ -1,0 +1,46 @@
+.navigation {
+    /*display: inline;*/
+    /*margin: 1em;*/
+    /*width: 100%*/
+}
+
+li {
+    display: inline-block;
+    float: right;
+    padding: 0 1em;
+}
+
+h1 {
+    margin: 0;
+}
+
+h3 {
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    /*margin-top: 4em;*/
+}
+
+.flex-container {
+    border: 1px black solid;
+    padding: 1em;
+    margin: 0.5em auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bi.flex-container div {
+
+}
+
+.tri.flex-container div {
+
+}
+
+.flex-item {
+    border: 1px grey solid;
+}

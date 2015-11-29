@@ -5,6 +5,7 @@
     <title>The Green Book</title>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <script src="app.js"></script>
     <script src="config.js"></script>
     <script src="controllers/home-controller.js"></script>
@@ -13,17 +14,23 @@
     <script src="controllers/contact-controller.js"></script>
 </head>
 <body>
-    <h1>Index File</h1>
-    <nav>
-        <ul>
-            <li ui-sref="home">Home</li>
-            <li ui-sref="how">How To</li>
-            <li ui-sref="data">Check Data</li>
-            <li ui-sref="contact">Contact</li>
-        </ul>
-    </nav>
+    <div class="flex-container">
+        <div class="flex-item">
+            <h1>The Green Book</h1>
+        </div>
+        <div class="flex-item">
+            <nav>
+                <ul>
+                    <li ui-sref="home">Home</li>
+                    <li ui-sref="how">How To</li>
+                    <li ui-sref="data">Check Data</li>
+                    <li ui-sref="contact">Contact</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
-    <div ui-view></div>
+    <div class="container" ui-view></div>
 
 </body>
 </html>
