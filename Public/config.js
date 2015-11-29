@@ -1,24 +1,37 @@
-/**
- * Created by kjefferson on 11/16/15.
- */
-
 (function() {
 
-    angular.module('greenBook')
+    'use strict';
+
+    angular.module('gb')
         .config(configGB);
 
-    configGB.$inject = ['$routeProvider'];
+    configGB.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-    function configGB($routeProvider) {
+    function configGB($stateProvider, $urlRouterProvider) {
 
-        $routeProvider.when('/', {
-            templateUrl: 'home/home.html',
+        $urlRouterProvider.otherwise('/');
+        $stateProvider.state('app', {
+            templateUrl: '/index.html'
+        }).state('home', {
+            url: '/',
+            templateUrl: 'views/home.html',
             controller: 'HomeController',
             controllerAs: 'HomeCtrl'
-        }).when('/how-to', {
-            templateUrl: 'how-to/how-to.html',
+        }).state('how', {
+            url: '/how',
+            templateUrl: 'views/how.html',
             controller: 'HowController',
             controllerAs: 'HowCtrl'
+        }).state('data', {
+            url: '/data',
+            templateUrl: 'views/data.html',
+            controller: 'DataController',
+            controllerAs: 'DataCtrl'
+        }).state('contact', {
+            url: '/contact',
+            templateUrl: 'views/contact.html',
+            controller: 'ContactController',
+            controllerAs: 'ContactCtrl'
         })
 
     }

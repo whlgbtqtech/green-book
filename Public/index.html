@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="greenBook">
+<html lang="en" ng-app="gb">
 <head>
     <meta charset="UTF-8">
     <title>The Green Book</title>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="app.js"></script>
     <script src="config.js"></script>
-    <script src="home/home-controller.js"></script>
-    <script src="how-to/how-to-controller.js"></script>
+    <script src="controllers/home-controller.js"></script>
+    <script src="controllers/how-controller.js"></script>
+    <script src="controllers/data-controller.js"></script>
+    <script src="controllers/contact-controller.js"></script>
 </head>
 <body>
     <h1>Index File</h1>
+    <nav>
+        <ul>
+            <li ui-sref="home">Home</li>
+            <li ui-sref="how">How To</li>
+            <li ui-sref="data">Check Data</li>
+            <li ui-sref="contact">Contact</li>
+        </ul>
+    </nav>
 
-    <div ng-view></div>
+    <div ui-view></div>
 
 </body>
 </html>
