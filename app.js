@@ -28,7 +28,7 @@ var app = bootable(express());
 app.phase(bootable.di.initializers());
 app.phase(bootable.di.routes());
 app.phase(IoC.create('igloo/server'));
-app.use(express.static(__dirname + '/public', { redirect : false }));
+app.use(express.static(__dirname + '/public', { redirect : false }));   
 
 // boot
 
