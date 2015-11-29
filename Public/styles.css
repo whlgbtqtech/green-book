@@ -1,7 +1,5 @@
 .navigation {
-    /*display: inline;*/
-    /*margin: 1em;*/
-    /*width: 100%*/
+    background-color: green;
 }
 
 li {
@@ -43,4 +41,8 @@ h3 {
 
 .flex-item {
     border: 1px grey solid;
+}
+
+.search {
+    max-width: 30%;
 }

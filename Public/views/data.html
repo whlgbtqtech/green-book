@@ -1,3 +1,16 @@
-<div>
-    DataController: {{DataCtrl.hello}}
+<div class="flex-container">
+    <!--DataController: {{DataCtrl.hello}}-->
+
+    <div class="search flex-item">
+        <form name="search">
+            <label>Location</label>
+            <input name="Location" type="text" placeholder="Enter City and State">
+            <label>Description</label>
+            <input name="Type" type="text" placeholder="Select Dataset">
+        </form>
+    </div>
+
+    <div class="results flex-item">
+        <span ng-show="!DataCtrl.results">Enter search criteria to populate data</span>
+    </div>
 </div>

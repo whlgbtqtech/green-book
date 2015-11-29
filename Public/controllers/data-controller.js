@@ -10,6 +10,7 @@
         var vm = this;
 
         vm.hello = 'It works!';
+        vm.results = false;
 
     }
 
