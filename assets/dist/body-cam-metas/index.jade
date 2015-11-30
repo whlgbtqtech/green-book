@@ -1,0 +1,33 @@
+
+//- # body cam meta - index
+
+extends ../layout
+
+block content
+
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1 Body cam metas (#{bodyCamMetas.length})
+        p: a(href='/body-cam-metas/new') Create New Body cam meta
+        table.table.table-bordered.table-hover.table-striped
+          thead
+            th Name
+            th Created At
+            th Updated At
+            th Actions
+          tbody
+            each bodyCamMeta in bodyCamMetas
+              tr
+                td= bodyCamMeta.name
+                td= moment(bodyCamMeta.created_at).format('MM/DD/YY')
+                td= moment(bodyCamMeta.updated_at).format('MM/DD/YY')
+                td
+                  ul.list-inline
+                    li: a(href='/body-cam-metas/' + bodyCamMeta.id).btn.btn-sm.btn-info View
+                    li: a(href='/body-cam-metas/' + bodyCamMeta.id + '/edit').btn.btn-sm.btn-warning Edit
+                    li
+                      form(action='/body-cam-metas/' + bodyCamMeta.id + '?_method=DELETE', method='POST').form-inline
+                        input(type='hidden', name='_csrf', value=csrf)
+                        button(type='submit').btn.btn-sm.btn-danger Remove
+        include ../_paginate

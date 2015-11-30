@@ -1,0 +1,33 @@
+
+//- # response resistance - index
+
+extends ../layout
+
+block content
+
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1 Response resistances (#{responseResistances.length})
+        p: a(href='/response-resistances/new') Create New Response resistance
+        table.table.table-bordered.table-hover.table-striped
+          thead
+            th Name
+            th Created At
+            th Updated At
+            th Actions
+          tbody
+            each responseResistance in responseResistances
+              tr
+                td= responseResistance.name
+                td= moment(responseResistance.created_at).format('MM/DD/YY')
+                td= moment(responseResistance.updated_at).format('MM/DD/YY')
+                td
+                  ul.list-inline
+                    li: a(href='/response-resistances/' + responseResistance.id).btn.btn-sm.btn-info View
+                    li: a(href='/response-resistances/' + responseResistance.id + '/edit').btn.btn-sm.btn-warning Edit
+                    li
+                      form(action='/response-resistances/' + responseResistance.id + '?_method=DELETE', method='POST').form-inline
+                        input(type='hidden', name='_csrf', value=csrf)
+                        button(type='submit').btn.btn-sm.btn-danger Remove
+        include ../_paginate

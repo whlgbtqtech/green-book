@@ -1,0 +1,33 @@
+
+//- # assaults on officer - index
+
+extends ../layout
+
+block content
+
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1 Assaults on officers (#{assaultsOnOfficers.length})
+        p: a(href='/assaults-on-officers/new') Create New Assaults on officer
+        table.table.table-bordered.table-hover.table-striped
+          thead
+            th Name
+            th Created At
+            th Updated At
+            th Actions
+          tbody
+            each assaultsOnOfficer in assaultsOnOfficers
+              tr
+                td= assaultsOnOfficer.name
+                td= moment(assaultsOnOfficer.created_at).format('MM/DD/YY')
+                td= moment(assaultsOnOfficer.updated_at).format('MM/DD/YY')
+                td
+                  ul.list-inline
+                    li: a(href='/assaults-on-officers/' + assaultsOnOfficer.id).btn.btn-sm.btn-info View
+                    li: a(href='/assaults-on-officers/' + assaultsOnOfficer.id + '/edit').btn.btn-sm.btn-warning Edit
+                    li
+                      form(action='/assaults-on-officers/' + assaultsOnOfficer.id + '?_method=DELETE', method='POST').form-inline
+                        input(type='hidden', name='_csrf', value=csrf)
+                        button(type='submit').btn.btn-sm.btn-danger Remove
+        include ../_paginate

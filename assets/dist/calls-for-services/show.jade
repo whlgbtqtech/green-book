@@ -1,0 +1,12 @@
+
+//- # calls for service - show
+
+extends ../layout
+
+block content
+  .container
+    .row
+      .col-md-4.col-md-offset-4
+        h1 Calls for service - #{callsForService.name}
+      
+        a(href='/calls-for-services/' + callsForService.id + '/edit') Edit Calls for service

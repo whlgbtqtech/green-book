@@ -1,0 +1,12 @@
+
+//- # arrest - show
+
+extends ../layout
+
+block content
+  .container
+    .row
+      .col-md-4.col-md-offset-4
+        h1 Arrest - #{arrest.name}
+      
+        a(href='/arrests/' + arrest.id + '/edit') Edit Arrest

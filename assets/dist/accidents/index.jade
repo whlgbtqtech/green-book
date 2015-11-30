@@ -1,0 +1,33 @@
+
+//- # accident - index
+
+extends ../layout
+
+block content
+
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1 Accidents (#{accidents.length})
+        p: a(href='/accidents/new') Create New Accident
+        table.table.table-bordered.table-hover.table-striped
+          thead
+            th Name
+            th Created At
+            th Updated At
+            th Actions
+          tbody
+            each accident in accidents
+              tr
+                td= accident.name
+                td= moment(accident.created_at).format('MM/DD/YY')
+                td= moment(accident.updated_at).format('MM/DD/YY')
+                td
+                  ul.list-inline
+                    li: a(href='/accidents/' + accident.id).btn.btn-sm.btn-info View
+                    li: a(href='/accidents/' + accident.id + '/edit').btn.btn-sm.btn-warning Edit
+                    li
+                      form(action='/accidents/' + accident.id + '?_method=DELETE', method='POST').form-inline
+                        input(type='hidden', name='_csrf', value=csrf)
+                        button(type='submit').btn.btn-sm.btn-danger Remove
+        include ../_paginate

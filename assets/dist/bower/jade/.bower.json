@@ -1,0 +1,14 @@
+{
+  "name": "jade",
+  "homepage": "https://github.com/visionmedia/jade",
+  "version": "1.8.2",
+  "_release": "1.8.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.8.2",
+    "commit": "57f5e1075e837873c6c634b2ad674d670e37dc07"
+  },
+  "_source": "git://github.com/visionmedia/jade.git",
+  "_target": "~1.8.0",
+  "_originalSource": "jade"
+}

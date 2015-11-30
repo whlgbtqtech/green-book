@@ -1,0 +1,12 @@
+
+//- # accident - show
+
+extends ../layout
+
+block content
+  .container
+    .row
+      .col-md-4.col-md-offset-4
+        h1 Accident - #{accident.name}
+      
+        a(href='/accidents/' + accident.id + '/edit') Edit Accident

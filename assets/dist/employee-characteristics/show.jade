@@ -1,0 +1,12 @@
+
+//- # employee characteristic - show
+
+extends ../layout
+
+block content
+  .container
+    .row
+      .col-md-4.col-md-offset-4
+        h1 Employee characteristic - #{employeeCharacteristic.name}
+      
+        a(href='/employee-characteristics/' + employeeCharacteristic.id + '/edit') Edit Employee characteristic

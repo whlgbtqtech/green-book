@@ -1,0 +1,12 @@
+
+//- # officer involved shooting - show
+
+extends ../layout
+
+block content
+  .container
+    .row
+      .col-md-4.col-md-offset-4
+        h1 Officer involved shooting - #{officerInvolvedShooting.name}
+      
+        a(href='/officer-involved-shootings/' + officerInvolvedShooting.id + '/edit') Edit Officer involved shooting

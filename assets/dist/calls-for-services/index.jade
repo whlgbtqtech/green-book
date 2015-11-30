@@ -1,0 +1,33 @@
+
+//- # calls for service - index
+
+extends ../layout
+
+block content
+
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1 Calls for services (#{callsForServices.length})
+        p: a(href='/calls-for-services/new') Create New Calls for service
+        table.table.table-bordered.table-hover.table-striped
+          thead
+            th Name
+            th Created At
+            th Updated At
+            th Actions
+          tbody
+            each callsForService in callsForServices
+              tr
+                td= callsForService.name
+                td= moment(callsForService.created_at).format('MM/DD/YY')
+                td= moment(callsForService.updated_at).format('MM/DD/YY')
+                td
+                  ul.list-inline
+                    li: a(href='/calls-for-services/' + callsForService.id).btn.btn-sm.btn-info View
+                    li: a(href='/calls-for-services/' + callsForService.id + '/edit').btn.btn-sm.btn-warning Edit
+                    li
+                      form(action='/calls-for-services/' + callsForService.id + '?_method=DELETE', method='POST').form-inline
+                        input(type='hidden', name='_csrf', value=csrf)
+                        button(type='submit').btn.btn-sm.btn-danger Remove
+        include ../_paginate

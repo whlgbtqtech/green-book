@@ -1,0 +1,33 @@
+
+//- # officer involved shooting - index
+
+extends ../layout
+
+block content
+
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1 Officer involved shootings (#{officerInvolvedShootings.length})
+        p: a(href='/officer-involved-shootings/new') Create New Officer involved shooting
+        table.table.table-bordered.table-hover.table-striped
+          thead
+            th Name
+            th Created At
+            th Updated At
+            th Actions
+          tbody
+            each officerInvolvedShooting in officerInvolvedShootings
+              tr
+                td= officerInvolvedShooting.name
+                td= moment(officerInvolvedShooting.created_at).format('MM/DD/YY')
+                td= moment(officerInvolvedShooting.updated_at).format('MM/DD/YY')
+                td
+                  ul.list-inline
+                    li: a(href='/officer-involved-shootings/' + officerInvolvedShooting.id).btn.btn-sm.btn-info View
+                    li: a(href='/officer-involved-shootings/' + officerInvolvedShooting.id + '/edit').btn.btn-sm.btn-warning Edit
+                    li
+                      form(action='/officer-involved-shootings/' + officerInvolvedShooting.id + '?_method=DELETE', method='POST').form-inline
+                        input(type='hidden', name='_csrf', value=csrf)
+                        button(type='submit').btn.btn-sm.btn-danger Remove
+        include ../_paginate

@@ -1,0 +1,33 @@
+
+//- # citizen complaint - index
+
+extends ../layout
+
+block content
+
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1 Citizen complaints (#{citizenComplaints.length})
+        p: a(href='/citizen-complaints/new') Create New Citizen complaint
+        table.table.table-bordered.table-hover.table-striped
+          thead
+            th Name
+            th Created At
+            th Updated At
+            th Actions
+          tbody
+            each citizenComplaint in citizenComplaints
+              tr
+                td= citizenComplaint.name
+                td= moment(citizenComplaint.created_at).format('MM/DD/YY')
+                td= moment(citizenComplaint.updated_at).format('MM/DD/YY')
+                td
+                  ul.list-inline
+                    li: a(href='/citizen-complaints/' + citizenComplaint.id).btn.btn-sm.btn-info View
+                    li: a(href='/citizen-complaints/' + citizenComplaint.id + '/edit').btn.btn-sm.btn-warning Edit
+                    li
+                      form(action='/citizen-complaints/' + citizenComplaint.id + '?_method=DELETE', method='POST').form-inline
+                        input(type='hidden', name='_csrf', value=csrf)
+                        button(type='submit').btn.btn-sm.btn-danger Remove
+        include ../_paginate
