@@ -32,9 +32,8 @@
             templateUrl: 'views/contact.html',
             controller: 'ContactController',
             controllerAs: 'ContactCtrl'
-        })
+        });
 
     }
 
 })();
-
