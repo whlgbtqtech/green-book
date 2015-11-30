@@ -1,10 +1,6 @@
-/**
- * Created by kjefferson on 11/16/15.
- */
-
 (function() {
 
-    angular.module('greenBook')
+    angular.module('gb')
         .controller('HomeController', HomeController);
 
     HomeController.$inject = [];

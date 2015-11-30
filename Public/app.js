@@ -1,18 +1,17 @@
-/**
- * Created by kjefferson on 11/16/15.
- */
-
 (function() {
 
-    angular.module('greenBook', ['ngRoute']);
+    'use strict';
 
-    angular.module('greenBook')
+    angular.module('gb', ['ui.router']);
+
+    angular.module('gb')
         .run(runGB);
 
     runGB.$inject = [];
 
     function runGB() {
-        // run block here
+
+
     }
 
 })();
