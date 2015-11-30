@@ -271,8 +271,8 @@ th {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../fonts/font-awesome/fontawesome-webfont.269041d1.eot?v=4.1.0');
-  src: url('../fonts/font-awesome/fontawesome-webfont.269041d1.eot?#iefix&v=4.1.0') format('embedded-opentype'), url('../fonts/font-awesome/fontawesome-webfont.e60178c6.woff?v=4.1.0') format('woff'), url('../fonts/font-awesome/fontawesome-webfont.815a7aaa.ttf?v=4.1.0') format('truetype'), url('../fonts/font-awesome/fontawesome-webfont.776d58f4.svg?v=4.1.0#fontawesomeregular') format('svg');
+  src: url('../fonts/font-awesome/fontawesome-webfont.41ef80f4.eot?v=4.1.0');
+  src: url('../fonts/font-awesome/fontawesome-webfont.41ef80f4.eot?#iefix&v=4.1.0') format('embedded-opentype'), url('../fonts/font-awesome/fontawesome-webfont.ef98f68e.woff?v=4.1.0') format('woff'), url('../fonts/font-awesome/fontawesome-webfont.9e8f7d17.ttf?v=4.1.0') format('truetype'), url('../fonts/font-awesome/fontawesome-webfont.776d58f4.svg?v=4.1.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
