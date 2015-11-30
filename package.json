@@ -79,7 +79,7 @@
     "gulp-exit": "0.0.2",
     "gulp-filter": "^2.0.2",
     "gulp-imagemin": "^2.2.1",
-    "gulp-jade-usemin": "^1.0.5",
+    "gulp-jade-usemin": "^1.1.0",
     "gulp-jshint": "^1.10.0",
     "gulp-less": "^3.0.3",
     "gulp-minify-html": "^1.0.2",
