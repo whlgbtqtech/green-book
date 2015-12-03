@@ -7,10 +7,66 @@ var mongoosePaginate = require('mongoose-paginate');
 exports = module.exports = function(mongoose, iglooMongoosePlugin) {
 
   var AssaultsOnOfficer = new mongoose.Schema({
-    name: {
-      type: String,
-      required: true
-    }
+      CRNumber: {
+          type: String
+      },
+      DispatchDateTime: {
+          type: String
+      },
+      Class: {
+          type: String
+      },
+      ClassDescription: {
+          type: String
+      },
+      PoliceDistrictNumber: {
+          type: Number
+      },
+      PoliceDistrictName: {
+          type: String
+      },
+      BlockAddress: {
+          type: String
+      },
+      City: {
+          type: String
+      },
+      State: {
+          type: String
+      },
+      ZipCode: {
+          type: String
+      },
+      Agency: {
+          type: String
+      },
+      Place: {
+          type: String
+      },
+      Sector: {
+          type: String
+      },
+      Beat: {
+          type: String
+      },
+      PRA: {
+          type: String
+      },
+      StartDateTime: {
+          type: Date
+      },
+      EndDateTime: {
+          type: Date
+      },
+      Latitude: {
+          type: String
+      },
+      Longitude: {
+        type: String
+      },
+      Location: {
+        type: String
+      }
   });
 
   // virtuals
