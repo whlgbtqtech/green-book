@@ -31,7 +31,7 @@ Configuration (e.g. database and logging setting per environment) is stored in `
 
 ## Documentation
 
-[The wiki](https://github.com/niftylettuce/eskimo/wiki) is the main source for additional documentation.
+[The wiki](https://github.com/whlgbtqtech/green-book) is the main source for additional documentation.
 
 ## Usage
 
